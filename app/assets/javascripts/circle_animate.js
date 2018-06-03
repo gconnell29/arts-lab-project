@@ -14,8 +14,8 @@ $( document ).on('turbolinks:load', function(event) {
   let addListener = function(val) {
     let element = $('#' + val);
     element.on('turbolinks:click', function(event){
-      $('.page-content').fadeOut(250)
       $(event.target).addClass('growCircle')
+      $('.page-content').fadeOut(500)
     })
   }
 
