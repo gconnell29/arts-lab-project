@@ -1,4 +1,11 @@
-$( document ).on('turbolinks:load', function() {
+$( document ).on('turbolinks:load', function(event) {
+
+  console.log(event.originalEvent.data.timing.visitStart)
+
+  if (event.originalEvent.data.timing.visitStart) {
+    //fade in here
+    $('.page-content')
+  }
 
   let toBeAnimated = [ 'about', 'programs', 'blog', 'apply', 'contact' ];
 
