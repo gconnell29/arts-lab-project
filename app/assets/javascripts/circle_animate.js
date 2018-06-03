@@ -1,10 +1,11 @@
 $( document ).on('turbolinks:load', function(event) {
 
-  console.log(event.originalEvent.data.timing.visitStart)
-
-  if (event.originalEvent.data.timing.visitStart) {
+  if (!event.originalEvent.data.timing.visitStart) {
     //fade in here
-    $('.page-content').fadeIn("slow")
+    $(document).on('turbolinks:before-render', function(event){
+      console.log(event.target.body)
+      $(event.target.body).fadeIn(200)
+    })
   }
 
   let toBeAnimated = [ 'about', 'programs', 'blog', 'apply', 'contact' ];
@@ -13,9 +14,7 @@ $( document ).on('turbolinks:load', function(event) {
   let addListener = function(val) {
     let element = $('#' + val);
     element.on('turbolinks:click', function(event){
-      let offset = $(event.target).offset();
-      $('.page-content').fadeOut("slow")
-      console.log(offset)
+      $('.page-content').fadeOut(250)
       $(event.target).addClass('growCircle')
     })
   }

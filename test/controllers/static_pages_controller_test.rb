@@ -11,4 +11,9 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get programs" do
+    get programs_path
+    assert_response :success
+  end
+
 end
