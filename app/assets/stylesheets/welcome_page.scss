@@ -1,1 +1,142 @@
+@mixin positioning ($top, $left) {
+  top: $top;
+  left: $left;
+}
 
+//Animation for circle expansion
+@mixin circle_animation ($screenWidth) {
+  @keyframes growCircle {
+    from {
+      width: $screenWidth;
+      height: $screenWidth;
+      border-radius: 50%;
+      background-color: #036;
+    }
+
+    to {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0%;
+      top:0; left:0;
+      background-color: #FFF;
+    }
+  }
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .circle {
+    background-color: #000080;
+  }
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  $screenWidth: 13.66666667vw;
+  @include circle_animation($screenWidth);
+
+  .arts-lab-logo {
+    min-width: 50%; min-height: 50%;
+    position: absolute;
+    @include positioning(18%, 15%);
+  }
+
+  .circle {
+    width: $screenWidth !important;
+    height: $screenWidth !important;
+    min-width: $screenWidth !important;
+    border-radius: 50%;
+    line-height: 13.50vw;
+    border: 5px solid #FF7300;
+    color: #0099B2;
+    position: absolute;
+  }
+
+  .growCircle {
+    animation: growCircle .25s linear forwards;
+    outline: 1px solid transparent;
+  }
+
+  #about {
+    @include positioning(2%, 25%);
+  }
+
+  #programs {
+    @include positioning(5%, 45%);
+  }
+
+  #apply {
+    @include positioning(40%, 65%);
+  }
+
+  #awaf {
+    @include positioning(65%, 60%);
+  }
+
+  #blog {
+    @include positioning(15%, 60%);
+  }
+
+  #meetup {
+    @include positioning(75%, 45%);
+  }
+
+  #contact {
+    @include positioning(80%, 25%);
+  }
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+
+  $screenWidth: 8.5vw;
+  @include circle_animation($screenWidth);
+
+  .arts-lab-logo {
+    min-width: 50%; min-height: 50%;
+    position: absolute;
+    @include positioning(15%, 15%);
+  }
+
+  .circle {
+    width: $screenWidth !important;
+    height: $screenWidth;
+    border-radius: 50%;
+    line-height: 7.5vw;
+    border: 5px solid #FF7300;
+    color: #0099B2;
+    position: absolute;
+  }
+
+  .growCircle {
+    animation: growCircle .25s linear forwards;
+    outline: 1px solid transparent;
+  }
+
+  #about {
+    @include positioning(2%, 25%);
+  }
+
+  #programs {
+    @include positioning(5%, 45%);
+  }
+
+  #apply {
+    @include positioning(40%, 65%);
+  }
+
+  #awaf {
+    @include positioning(65%, 60%);
+  }
+
+  #blog {
+    @include positioning(15%, 60%);
+  }
+
+  #meetup {
+    @include positioning(75%, 45%);
+  }
+
+  #contact {
+    @include positioning(80%, 25%);
+  }
+}

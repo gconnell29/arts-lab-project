@@ -1,9 +1,11 @@
-<nav>
-  <%= link_to "About", '#', class: "", id: "" %>
-  <%= link_to "Programs", '#', class: "", id: "" %>
-  <%= link_to "Apply", '#', class: "", id: "" %>
-  <%= link_to "AWAF", '#', class: "", id: "" %>
-  <%= link_to "Blog", '#', class: "", id: "" %>
-  <%= link_to "Meet Up", '#', class: "", id: "" %>
-  <%= link_to "Contact", '#', class: "", id: "" %>
+<nav class="grid-x">
+  <%= link_to image_tag("phoenix.png", alt: "ArtsLab placeholder photo"),
+              root_path, class: "cell medium-5 arts-lab-logo" %>
+  <%= link_to "About", '#', class: "cell small-12 medium-1 large-1 circle text-center", id: "about" %>
+  <%= link_to "Programs", '#', class: "cell small-12 medium-1 large-1 circle text-center", id: "programs" %>
+  <%= link_to "Apply", '#', class: "cell small-12 medium-1 large-1 circle text-center", id: "apply" %>
+  <%= link_to "AWAF", '#', class: "cell small-12 medium-1 large-1 circle text-center", id: "awaf" %>
+  <%= link_to "Blog", '#', class: "cell small-12 medium-1 large-1 circle text-center", id: "blog" %>
+  <%= link_to "Meet Up", '#', class: "cell small-12 medium-1 large-1 circle text-center", id: "meetup" %>
+  <%= link_to "Contact", '#', class: "cell small-12 medium-1 large-1 circle text-center", id: "contact" %>
 </nav>
